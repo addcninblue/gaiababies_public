@@ -1,0 +1,31 @@
+:root {
+    --bg:#434341;
+}
+
+#foo {
+    color: var(--main-color);
+}
+
+@font-face {
+    font-family: 'GothamSSm';
+    src: url('../assets/fonts/gothamssm_light.otf') format('opentype');
+    font-weight: 300;  /* Light weight */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GothamSSm';
+    src: url('../assets/fonts/gothmssm_medium.otf') format('opentype');
+    font-weight: 500;  /* Medium weight */
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GothamSSm';
+    src: url('../assets/fonts/gothamssm_bold.otf') format('opentype');
+    font-weight: 700;  /* Bold weight */
+    font-style: normal;
+    font-display: swap;
+}
