@@ -6,8 +6,11 @@
     <title>My Website</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="css/main.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-100">
+<body class="bg-[#FFFFFF]">
     <!-- Header: h-20 is ~80px, h-[84px] for exact height -->
     <header class="fixed top-0 w-full bg-[#434341] shadow-md h-[84px] z-50">
         <div class="container mx-auto px-4 h-full flex items-center justify-between">
@@ -35,10 +38,42 @@
     </section>
 
     <!-- Meet the Strollers -->
-    <section id="meet-the-strollers" class="py-16">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold mb-8">Meet the Strollers</h2>
-            <!-- Add content here -->
+    <section id="meet-the-strollers">
+        <section id='meet-our-strollers-title' class="h-64 flex items-center justify-center">
+            <h2 class="font-['Montserrat'] font-black text-[54px] leading-[65px] tracking-[0.01em] text-center text-[#B0B8B2]">
+                Meet Our Strollers
+            </h2>
+        </section>
+        
+        <!-- First Stroller -->
+        <div class="h-screen px-[120px]">
+            <div class="container mx-auto">
+                Stroller 1 Content
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="py-[80px]">
+            <div class="mx-auto w-[90%] max-w-[1200px] h-[2px] bg-[#EDECE6]"></div>
+        </div>
+
+        <!-- Second Stroller -->
+        <div class="h-screen px-[120px]">
+            <div class="container mx-auto">
+                Stroller 2 Content
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="py-[80px]">
+            <div class="mx-auto w-[90%] max-w-[1200px] h-[2px] bg-[#EDECE6]"></div>
+        </div>
+
+        <!-- Third Stroller -->
+        <div class="h-screen px-[120px]">
+            <div class="container mx-auto">
+                Stroller 3 Content
+            </div>
         </div>
     </section>
 
