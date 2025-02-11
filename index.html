@@ -51,8 +51,59 @@
                 <div class="flex flex-col lg:flex-row gap-8 lg:gap-[144px] py-8 lg:py-0">
                     <!-- Product Description Column -->
                     <div class="flex-1 flex flex-col justify-center">
-                        <h2 class="text-3xl font-bold mb-6">Stroller Name</h2>
-                        <p class="text-lg mb-4">Product description goes here...</p>
+                        <h2 class="font-['Montserrat'] font-black text-[40px] leading-[120%] tracking-[0.4px] text-black mb-6">Osey</h2>
+                        
+                        <!-- Color Selection -->
+                        <div class="flex gap-4 mb-6">
+                            <img src="assets/images/color1.png" alt="Color 1" class="w-[60px] h-[60px] rounded-full"/>
+                            <img src="assets/images/color2.png" alt="Color 2" class="w-[60px] h-[60px] rounded-full"/>
+                            <img src="assets/images/color3.png" alt="Color 3" class="w-[60px] h-[60px] rounded-full"/>
+                        </div>
+
+                        <!-- Color Description -->
+                        <div class="flex flex-col gap-2">
+                            <div class="font-['Arial'] text-[16px] font-bold leading-[120%] tracking-[1.6px] text-[#434341] uppercase">
+                                SANDBOX
+                            </div>
+                            <div class="font-['Arial'] text-[14px] font-normal leading-[120%] tracking-[0.7px] text-[#43434199]">
+                                Light Tan | Black Leather | Chocolate Brown Safety Bar
+                            </div>
+                        </div>
+
+                        <!-- Tab Selection -->
+                        <div class="flex flex-col mt-8">
+                            <div class="flex gap-8">
+                                <div class="relative">
+                                    <button onclick="switchTab('overview', this)" class="tab-button active font-['Arial'] text-[16px] font-bold leading-[120%] tracking-[1.6px] text-[#434341] uppercase pb-2">
+                                        Overview
+                                    </button>
+                                    <!-- Active tab indicator -->
+                                    <div class="tab-indicator absolute bottom-0 left-0 w-full h-[1px] bg-[#434341]"></div>
+                                </div>
+                                <div class="relative">
+                                    <button onclick="switchTab('specs', this)" class="tab-button font-['Arial'] text-[16px] font-bold leading-[120%] tracking-[1.6px] text-[#434341] uppercase opacity-60 pb-2">
+                                        Product Specs
+                                    </button>
+                                    <!-- Hidden indicator for second tab -->
+                                    <div class="tab-indicator absolute bottom-0 left-0 w-full h-[1px] bg-[#434341] hidden"></div>
+                                </div>
+                            </div>
+                            <!-- Single continuous tab bar -->
+                            <div class="w-[464px] h-[1px] bg-[#EDECE6] -mt-[1px]"></div>
+                            
+                            <!-- Tab Content -->
+                            <div class="tab-content mt-6">
+                                <div id="overview-content" class="w-[464px] font-['Arial'] text-[16px] leading-[150%] text-[#434341]">
+                                    Lorem ipsum odor amet, consectetuer adipiscing elit. Magnis tortor donec mattis arcu venenatis tincidunt. Adictumst ipsum, tristique odio sagittis in hendrerit. Consequat potenti arcu justo pretium mauris nulla. Parturient mauris semper vivamus gravida quis; velit conubia vestibulum at.
+Sem ante dui est nascetur semper faucibus tincidunt per maximus. Maximus porta leo lacinia ac lectus rhoncus aenean, venenatis quis. Conubia ad senectus mus mi dui massa. Imperdiet nullam vitae enim augue himenaeos vehicula ultrices. Consectetur lacinia donec nostra sodales auctor; torquent tincidunt proin sagittis. Donec consectetur nisi proin efficitur cras mi elit. Laoreet lacus convallis proin consectetur a mattis neque. Donec ex nibh amet elementum turpis leo odio. Class ligula sollicitudin primis varius curabitur curae duis litora.
+                                </div>
+                                <div id="specs-content" class="w-[464px] font-['Arial'] text-[16px] leading-[150%] text-[#434341] hidden">
+                                    <!-- Product specs content will go here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 lg:mt-auto"></div>
                     </div>
 
                     <!-- Image Gallery Column -->
@@ -142,5 +193,36 @@
             </div>
         </div>
     </footer>
+
+    <!-- Add this script section at the end of your body tag -->
+    <script>
+    function switchTab(tab, element) {
+        // Remove active state from all buttons
+        document.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active');
+            btn.classList.add('opacity-60');
+        });
+        
+        // Hide all indicators
+        document.querySelectorAll('.tab-indicator').forEach(indicator => {
+            indicator.classList.add('hidden');
+        });
+        
+        // Hide all content sections
+        document.querySelectorAll('.tab-content > div').forEach(content => {
+            content.classList.add('hidden');
+        });
+        
+        // Add active state to clicked button
+        element.classList.add('active');
+        element.classList.remove('opacity-60');
+        
+        // Show indicator for active tab
+        element.parentElement.querySelector('.tab-indicator').classList.remove('hidden');
+        
+        // Show the selected tab's content
+        document.getElementById(`${tab}-content`).classList.remove('hidden');
+    }
+    </script>
 </body>
 </html> 
