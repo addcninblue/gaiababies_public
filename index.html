@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="css/main.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
 </head>
 <body class="bg-[#FFFFFF]">
     <!-- Header: h-20 is ~80px, h-[84px] for exact height -->
@@ -171,17 +171,59 @@ Sem ante dui est nascetur semper faucibus tincidunt per maximus. Maximus porta l
     </section>
 
     <!-- About Section with 3 columns -->
-    <section id="about" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="max-w-[244px] mx-auto grid grid-cols-3 gap-4">
-                <div class="col-span-1">
-                    Column 1
+    <section id="about" class="bg-[#EDECE650]">
+        <section id='about-title' class="h-52 flex items-center justify-center">
+            <h2 class="font-['Montserrat'] font-black text-[54px] leading-[65px] tracking-[0.01em] text-center text-[#434341]">
+                About GaiaBaby
+            </h2>
+        </section>
+
+        <!-- About text section -->
+        <section id='about-text' class="flex items-center justify-center">
+            <p class="w-[1152px] h-[62px] font-['Arial'] text-[26px] font-normal leading-[140%] text-[#434341] text-center">
+                Lorem ipsum odor amet, consectetuer adipiscing elit. Magnis tortor donec mattis arcu venenatis tincidunt. Adictumst ipsum, tristique odio sagittis. Consequat potenti arcu justo pretium mauris nulla.
+            </p>
+        </section>
+
+        <div id="about-columns" class="flex justify-center mt-16">
+            <div class="w-[1014px] h-[244px] flex gap-[60px]">
+                <!-- Column 1 -->
+                <div class="w-[298px] flex flex-col items-center">
+                    <div class="w-[126px] h-[126px] rounded-full mb-6">
+                        <img src="assets/images/icon-1.svg" alt="Icon 1" class="w-full h-full object-contain"/>
+                    </div>
+                    <p class="font-['Arial'] text-[16px] font-bold leading-[120%] tracking-[1.6px] text-[#434341] text-center uppercase mb-2">
+                        LOREM IPSUM
+                    </p>
+                    <p class="font-['Arial'] text-[14px] font-normal leading-[140%] tracking-[0.7px] text-[#434341] text-center">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
                 </div>
-                <div class="col-span-1">
-                    Column 2
+
+                <!-- Column 2 -->
+                <div class="w-[298px] flex flex-col items-center">
+                    <div class="w-[126px] h-[126px] rounded-full mb-6">
+                        <img src="assets/images/icon-2.svg" alt="Icon 2" class="w-full h-full object-contain"/>
+                    </div>
+                    <p class="font-['Arial'] text-[16px] font-bold leading-[120%] tracking-[1.6px] text-[#434341] text-center uppercase mb-2">
+                        LOREM IPSUM
+                    </p>
+                    <p class="font-['Arial'] text-[14px] font-normal leading-[140%] tracking-[0.7px] text-[#434341] text-center">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
                 </div>
-                <div class="col-span-1">
-                    Column 3
+
+                <!-- Column 3 -->
+                <div class="w-[298px] flex flex-col items-center">
+                    <div class="w-[126px] h-[126px] rounded-full mb-6">
+                        <img src="assets/images/icon-3.svg" alt="Icon 3" class="w-full h-full object-contain"/>
+                    </div>
+                    <p class="font-['Arial'] text-[16px] font-bold leading-[120%] tracking-[1.6px] text-[#434341] text-center uppercase mb-2">
+                        FIND US AT A STORE NEAR YOU
+                    </p>
+                    <p class="font-['Arial'] text-[14px] font-normal leading-[140%] tracking-[0.7px] text-[#434341] text-center">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    </p>
                 </div>
             </div>
         </div>
