@@ -9,6 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
+    <style>
+    html {
+        scroll-padding-top: 84px; /* Same as header height */
+    }
+    </style>
 </head>
 <body class="bg-[#FFFFFF]">
     <!-- Header: h-20 is ~80px, h-[84px] for exact height -->
@@ -16,10 +21,10 @@
         <div class="container mx-auto px-4 h-full flex items-center justify-between">
             <div class="text-white text-[30px] leading-[36px] tracking-[0.01em] text-center font-[700] font-['GothamSSm']">GAIABABY</div>
             <nav class="flex items-center gap-10 ml-auto">
-                <a href="#" class="font-['Arial'] font-bold text-base leading-[19.2px] tracking-[0.05em] text-center text-[#EDECE6] whitespace-nowrap">Products</a>
-                <a href="#" class="font-['Arial'] font-bold text-base leading-[19.2px] tracking-[0.05em] text-center text-[#EDECE6] whitespace-nowrap">About</a>
-                <a href="#" class="font-['Arial'] font-bold text-base leading-[19.2px] tracking-[0.05em] text-center text-[#EDECE6] whitespace-nowrap">Contact Us</a>
-                <a href="#" class="font-['Arial'] font-bold text-base leading-[19.2px] tracking-[0.05em] text-center text-[#EDECE6] whitespace-nowrap">Shop at Target</a>
+                <a href="#meet-the-strollers" class="font-['Arial'] font-bold text-base leading-[19.2px] tracking-[0.05em] text-center text-[#EDECE6] whitespace-nowrap hover:text-white transition-colors">Products</a>
+                <a href="#about" class="font-['Arial'] font-bold text-base leading-[19.2px] tracking-[0.05em] text-center text-[#EDECE6] whitespace-nowrap hover:text-white transition-colors">About</a>
+                <a href="#contact" class="font-['Arial'] font-bold text-base leading-[19.2px] tracking-[0.05em] text-center text-[#EDECE6] whitespace-nowrap hover:text-white transition-colors">Contact Us</a>
+                <a href="https://www.target.com" target="_blank" rel="noopener noreferrer" class="font-['Arial'] font-bold text-base leading-[19.2px] tracking-[0.05em] text-center text-[#EDECE6] whitespace-nowrap hover:text-white transition-colors">Shop at Target</a>
             </nav>
         </div>
     </header>
@@ -215,7 +220,7 @@
                         SUSTAINABILITY
                     </p>
                     <p class="font-['Arial'] text-[14px] font-normal leading-[140%] tracking-[0.7px] text-[#434341] text-center">
-                        Beyond our dedication to excellence, we are passionate about protecting the environment for future generations. That’s why we prioritize sustainability by utilizing the best recycled materials in our manufacturing process, reducing our ecological footprint while maintaining superior craftsmanship.
+                        Beyond our dedication to excellence, we are passionate about protecting the environment for future generations. That's why we prioritize sustainability by utilizing the best recycled materials in our manufacturing process, reducing our ecological footprint while maintaining superior craftsmanship.
                     </p>
                 </div>
 
@@ -236,7 +241,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-[#434341] py-8 md:pt-20">
+    <footer class="bg-[#434341] py-8 md:pt-20" id="contact">
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row md:pl-[122px]">
                 <!-- Column 1 -->
@@ -323,6 +328,24 @@
         // Show the selected tab's content
         document.getElementById(`${tab}-content`).classList.remove('hidden');
     }
+
+    // Add this script for smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const section = document.querySelector(this.getAttribute('href'));
+            if (section) {
+                const headerHeight = 84; // Header height in pixels
+                const elementPosition = section.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
     </script>
 </body>
 </html> 
