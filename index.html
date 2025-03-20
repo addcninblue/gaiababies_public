@@ -18,9 +18,9 @@
 <body class="bg-[#FFFFFF]">
     <!-- Header: h-20 is ~80px, h-[84px] for exact height -->
     <header class="fixed top-0 w-full bg-[#434341] shadow-md h-[84px] z-50">
-        <div class="container mx-auto px-4 h-full flex items-center justify-between">
-            <div class="text-white text-[30px] leading-[36px] tracking-[0.01em] text-center font-[700] font-['GothamSSm']">GAIABABY</div>
-            <nav class="flex items-center gap-10 ml-auto">
+        <div class="container mx-auto px-4 h-full flex items-center justify-between max-w-[1440px]">
+            <div class="text-white text-[clamp(24px,2.5vw,30px)] leading-[120%] tracking-[0.01em] text-center font-[700] font-['GothamSSm']">GAIABABY</div>
+            <nav class="flex items-center gap-[clamp(20px,3vw,40px)] ml-auto">
                 <a href="#meet-the-strollers" class="font-['Arial'] font-bold text-base leading-[19.2px] tracking-[0.05em] text-center text-[#EDECE6] whitespace-nowrap hover:text-white transition-colors">Products</a>
                 <a href="#about" class="font-['Arial'] font-bold text-base leading-[19.2px] tracking-[0.05em] text-center text-[#EDECE6] whitespace-nowrap hover:text-white transition-colors">About</a>
                 <a href="#contact" class="font-['Arial'] font-bold text-base leading-[19.2px] tracking-[0.05em] text-center text-[#EDECE6] whitespace-nowrap hover:text-white transition-colors">Contact Us</a>
@@ -43,19 +43,19 @@
     </section>
 
     <!-- Meet the Strollers -->
-    <section id="meet-the-strollers">
-        <section id='meet-our-strollers-title' class="h-64 flex items-center justify-center">
-            <h2 class="font-['Montserrat'] font-black text-[54px] leading-[65px] tracking-[0.01em] text-center text-[#B0B8B2]">
+    <section id="meet-the-strollers" class="pb-24">
+        <section id='meet-our-strollers-title' class="min-h-[65px] py-16 flex items-center justify-center">
+            <h2 class="font-['Montserrat'] font-black text-[clamp(36px,5vw,54px)] leading-[120%] tracking-[0.01em] text-center text-[#B0B8B2]">
                 Meet Our Strollers
             </h2>
         </section>
         
         <!-- First Stroller -->
-        <div class="px-[120px] md:px-6 lg:px-[120px]">
-            <div class="container mx-auto">
-                <div class="flex flex-col lg:flex-row gap-8 lg:gap-[144px] py-8 lg:py-0">
+        <div class="px-4 lg:px-[8vw]">
+            <div class="container mx-auto max-w-[1440px]">
+                <div class="flex flex-col lg:flex-row gap-8 lg:gap-[8vw] py-8 lg:py-0">
                     <!-- Product Description Column -->
-                    <div class="flex-1 flex flex-col justify-center">
+                    <div class="flex-1 flex flex-col justify-center max-w-[600px]">
                         <h2 class="font-['Montserrat'] font-black text-[40px] leading-[120%] tracking-[0.4px] text-black mb-6">Strol</h2>
                         
                         <!-- Color Selection -->
@@ -118,7 +118,7 @@
                     </div>
 
                     <!-- Image Gallery Column -->
-                    <div class="flex-1 flex items-center">
+                    <div class="flex-1 flex items-center max-w-[600px]">
                         <div class="relative w-full">
                             <!-- Gallery Navigation -->
                             <button class="absolute left-4 top-1/2 -translate-y-1/2 z-10">
@@ -158,46 +158,25 @@
                 </div>
             </div>
         </div>
-<!--
-        <div class="py-[80px]">
-            <div class="mx-auto w-[90%] max-w-[1200px] h-[2px] bg-[#EDECE6]"></div>
-        </div>
-
-        <div class="h-screen px-[120px]">
-            <div class="container mx-auto">
-                Stroller 2 Content
-            </div>
-        </div>
-
-        <div class="py-[80px]">
-            <div class="mx-auto w-[90%] max-w-[1200px] h-[2px] bg-[#EDECE6]"></div>
-        </div>
-
-        <div class="h-screen px-[120px]">
-            <div class="container mx-auto">
-                Stroller 3 Content
-            </div>
-        </div>
--->
     </section>
 
     <!-- About Section with 3 columns -->
-    <section id="about" class="bg-[#EDECE650]">
-        <section id='about-title' class="h-52 flex items-center justify-center">
-            <h2 class="font-['Montserrat'] font-black text-[54px] leading-[65px] tracking-[0.01em] text-center text-[#434341]">
+    <section id="about" class="bg-[#EDECE680] py-24">
+        <section id='about-title' class="min-h-[52px] py-16 flex items-center justify-center">
+            <h2 class="font-['Montserrat'] font-black text-[clamp(36px,5vw,54px)] leading-[120%] tracking-[0.01em] text-center text-[#434341]">
                 About GaiaBaby
             </h2>
         </section>
 
         <!-- About text section -->
-        <section id='about-text' class="flex items-center justify-center">
-            <p class="w-[1152px] h-[100px] font-['Arial'] text-[26px] font-normal leading-[140%] text-[#434341] text-center">
+        <section id='about-text' class="flex items-center justify-center px-4 mb-16">
+            <p class="max-w-[1152px] text-[clamp(18px,2.5vw,26px)] font-normal leading-[140%] text-[#434341] text-center">
                 At GaiaBaby, we are committed to providing families with the finest quality strollers at affordable prices. We believe that every child deserves the best start in life, and that begins with safe, durable, and stylish products that babies can indulge in and parents can trust and exhibit.
             </p>
         </section>
 
-        <div id="about-columns" class="flex justify-center mt-16">
-            <div class="w-[1014px] h-[400px] flex gap-[60px]">
+        <div id="about-columns" class="flex justify-center mt-16 px-4 pb-8">
+            <div class="max-w-[1014px] w-full flex flex-col md:flex-row gap-8 md:gap-[60px]">
                 <!-- Column 1 -->
                 <div class="w-[298px] flex flex-col items-center">
                     <div class="w-[126px] h-[126px] rounded-full mb-6">
@@ -241,9 +220,9 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-[#434341] py-8 md:pt-20" id="contact">
-        <div class="container mx-auto">
-            <div class="flex flex-col md:flex-row md:pl-[122px]">
+    <footer class="bg-[#434341] py-16 md:pt-20 md:pb-[80px]" id="contact">
+        <div class="container mx-auto max-w-[1440px] px-4">
+            <div class="flex flex-col md:flex-row md:gap-[135px]">
                 <!-- Column 1 -->
                 <div class="w-full md:w-[351px] px-4 md:px-0 mb-8 md:mb-0">
                     <!-- Row 1 - Bold Label -->
@@ -266,9 +245,6 @@
                         Shop at Target
                     </p>
                 </div>
-
-                <!-- Gap between columns: 135px -->
-                <div class="md:w-[135px]"></div>
 
                 <!-- Column 2 -->
                 <div class="w-full md:w-[466px] px-4 md:px-0">
