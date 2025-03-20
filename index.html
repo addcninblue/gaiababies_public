@@ -14,6 +14,17 @@
     html {
         scroll-padding-top: 84px; /* Same as header height */
     }
+    
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+    
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .scrollbar-hide {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
     </style>
 </head>
 <body class="bg-[#FFFFFF]">
@@ -163,19 +174,24 @@
                             </button>
 
                             <!-- Thumbnail Navigation -->
-                            <div class="flex gap-4 mt-4 justify-center">
-                                <template x-for="(image, index) in images" :key="index">
-                                    <div 
-                                        @click="setImage(index)"
-                                        class="w-12 h-12 lg:w-16 lg:h-16 cursor-pointer relative"
-                                        :class="currentIndex === index ? 'ring-2 ring-offset-2 ring-gray-800' : ''">
-                                        <img 
-                                            :src="image" 
-                                            :alt="'Thumbnail ' + (index + 1)" 
-                                            class="w-full h-full object-cover"
-                                        />
+                            <div class="relative mt-4">
+                                <!-- Scroll Container -->
+                                <div class="overflow-x-auto scrollbar-hide">
+                                    <div class="flex gap-4 pb-2" style="min-width: min-content">
+                                        <template x-for="(image, index) in images" :key="index">
+                                            <div 
+                                                @click="setImage(index)"
+                                                class="w-16 h-16 flex-shrink-0 cursor-pointer relative"
+                                                :class="currentIndex === index ? 'ring-2 ring-offset-2 ring-gray-800' : ''">
+                                                <img 
+                                                    :src="image" 
+                                                    :alt="'Thumbnail ' + (index + 1)" 
+                                                    class="w-full h-full object-cover"
+                                                />
+                                            </div>
+                                        </template>
                                     </div>
-                                </template>
+                                </div>
                             </div>
                         </div>
                     </div>
