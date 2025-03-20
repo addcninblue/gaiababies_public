@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -101,10 +102,41 @@
                     </div>
 
                     <!-- Image Gallery Column -->
-                    <div class="flex-1 flex items-center max-w-[600px]">
+                    <div class="flex-1 flex items-center max-w-[600px]"
+                         x-data="{ 
+                            images: [
+                                'assets/images/stroller1.png',
+                                'assets/images/wheel-1.png',
+                                'assets/images/wheel-2.png',
+                                'assets/images/wheel-3.png',
+                                'assets/images/wheel-4.png',
+                                'assets/images/wheel-5.png',
+                                'assets/images/wheel-6.png',
+                                'assets/images/wheel-7.png',
+                                'assets/images/wheel-8.png',
+                                'assets/images/wheel-9.png',
+                                'assets/images/wheel-10.png',
+                                'assets/images/wheel-11.png',
+                                'assets/images/wheel-12.png',
+                            ],
+                            currentIndex: 0,
+                            next() {
+                                this.currentIndex = (this.currentIndex + 1) % this.images.length;
+                            },
+                            prev() {
+                                this.currentIndex = this.currentIndex === 0 ? 
+                                    this.images.length - 1 : 
+                                    this.currentIndex - 1;
+                            },
+                            setImage(index) {
+                                this.currentIndex = index;
+                            }
+                         }">
                         <div class="relative w-full">
                             <!-- Gallery Navigation -->
-                            <button class="absolute left-4 top-1/2 -translate-y-1/2 z-10">
+                            <button 
+                                @click="prev()"
+                                class="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/50 rounded-full p-2 hover:bg-white/80 transition-colors">
                                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
                                 </svg>
@@ -112,10 +144,19 @@
                             
                             <!-- Main Image -->
                             <div class="relative aspect-square">
-                                <img src="assets/images/stroller1.png" alt="Osey Stroller" class="w-full h-full object-cover"/>
+                                <template x-for="(image, index) in images" :key="index">
+                                    <img 
+                                        :src="image" 
+                                        :alt="'Product image ' + (index + 1)"
+                                        class="w-full h-full object-cover absolute top-0 left-0 transition-opacity duration-300"
+                                        :class="currentIndex === index ? 'opacity-100' : 'opacity-0'"
+                                    />
+                                </template>
                             </div>
 
-                            <button class="absolute right-4 top-1/2 -translate-y-1/2 z-10">
+                            <button 
+                                @click="next()"
+                                class="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/50 rounded-full p-2 hover:bg-white/80 transition-colors">
                                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                                 </svg>
@@ -123,18 +164,18 @@
 
                             <!-- Thumbnail Navigation -->
                             <div class="flex gap-4 mt-4 justify-center">
-                                <div class="w-12 h-12 lg:w-16 lg:h-16 cursor-pointer">
-                                    <img src="assets/images/wheel-1-1.png" alt="Wheel view 1" class="w-full h-full object-cover"/>
-                                </div>
-                                <div class="w-12 h-12 lg:w-16 lg:h-16 cursor-pointer">
-                                    <img src="assets/images/wheel-1-2.png" alt="Wheel view 2" class="w-full h-full object-cover"/>
-                                </div>
-                                <div class="w-12 h-12 lg:w-16 lg:h-16 cursor-pointer">
-                                    <img src="assets/images/wheel-1-3.png" alt="Wheel view 3" class="w-full h-full object-cover"/>
-                                </div>
-                                <div class="w-12 h-12 lg:w-16 lg:h-16 cursor-pointer">
-                                    <img src="assets/images/wheel-1-4.png" alt="Wheel view 4" class="w-full h-full object-cover"/>
-                                </div>
+                                <template x-for="(image, index) in images" :key="index">
+                                    <div 
+                                        @click="setImage(index)"
+                                        class="w-12 h-12 lg:w-16 lg:h-16 cursor-pointer relative"
+                                        :class="currentIndex === index ? 'ring-2 ring-offset-2 ring-gray-800' : ''">
+                                        <img 
+                                            :src="image" 
+                                            :alt="'Thumbnail ' + (index + 1)" 
+                                            class="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                </template>
                             </div>
                         </div>
                     </div>
